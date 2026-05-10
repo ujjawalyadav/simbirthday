@@ -94,7 +94,7 @@ body.party {
   left: 0;
   right: 0;
   text-align: center;
-  z-index: 5;
+  z-index: 50;
   opacity: 0;
   transform: translateY(16px);
   transition:
@@ -563,7 +563,7 @@ body.party {
 .balloon {
   position: fixed;
   bottom: -160px;
-  z-index: 36;
+  z-index: 30;
   opacity: 0;
   transform: translate3d(0, 0, 0);
   will-change: transform, opacity;
