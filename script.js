@@ -130,7 +130,7 @@ function step(n) {
   ACTIONS[n]();
 }
 function showNext(n,delay=900){
-  if(n>9)return;
+  if(n>10)return;
   setTimeout(() => {
     const b = document.getElementById("b" + n);
     b.style.display = "block";
@@ -329,12 +329,11 @@ const ACTIONS = {
 
     // ✍️ YOUR GOLDEN TEXT LINES — edit freely
     const lines = [
-      'हरे कृष्ण हरे कृष्ण',
-      'कृष्ण कृष्ण हरे हरे',
+      'अद्वेष्टा सर्वभूतानां मैत्रः करुण एव च ।',
+      'निर्ममो निरहङ्कारः समदुःखसुखः क्षमी ॥',
+      '(Bhagavad Gita 12.13)',
       '~ ~ ~',
-      'May Lord Krishna\'s flute',
-      'always play in your heart,',
-      'Simran.',
+      'जो किसी से द्वेष नहीं रखता, जो सबसे मित्रतापूर्ण और दयालु है, अहंकार से मुक्त है, सुख-दुख में समभाव रखता है और क्षमाशील है — ऐसा व्यक्ति मुझे प्रिय है।',
       '~ ~ ~',
       'Happy Birthday 🌸'
     ];
@@ -397,7 +396,7 @@ wrap.addEventListener('click',()=>{
 },{once:true});
   },
 
-9(){
+  9(){
     const audio=document.getElementById('birthday-audio');
     audio.pause();
     if(window._flute){
@@ -411,6 +410,7 @@ wrap.addEventListener('click',()=>{
     document.getElementById('spotify-close').addEventListener('click',()=>{
       document.getElementById('spotify-panel').classList.remove('show');
       audio.play().catch(()=>{});
+      showNext(10, 1000);
     },{once:true});
   }
 };
@@ -445,7 +445,15 @@ function flashScreen() {
     );
   }, 75);
 }
-
+function replayPage(){
+  // fade out everything beautifully before reload
+  document.body.style.transition='opacity 1.2s ease';
+  document.body.style.opacity='0';
+  stopAllAudio();
+  setTimeout(()=>{
+    window.location.reload();
+  },1200);
+}
 function spawnSideBalloons(count) {
   const bc = [
     ["#ff6b9d", "#ff3d78"],

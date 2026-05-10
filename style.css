@@ -276,6 +276,25 @@ body.party {
     box-shadow: 0 5px 44px rgba(245, 224, 64, 1);
   }
 }
+.b-replay{
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4,#ffecd2);
+  background-size:200% 200%;
+  color:#a0325a;
+  box-shadow:0 5px 28px rgba(255,150,160,.55);
+  animation:replayGlow 2.5s ease infinite alternate;
+  font-size:1rem;
+  border:2px solid rgba(255,180,180,.4);
+}
+@keyframes replayGlow{
+  from{
+    box-shadow:0 5px 20px rgba(255,150,160,.4);
+    background-position:0% 50%;
+  }
+  to{
+    box-shadow:0 5px 40px rgba(255,120,140,.85);
+    background-position:100% 50%;
+  }
+}
 
 /* ── CAKE ── */
 #cake {
@@ -1066,10 +1085,10 @@ body.party {
 #krishna-curtain.down{top:0;pointer-events:all}
 #krishna-curtain.up{top:-100vh}
 
-#krishna-feather{
+#krishna-feather{   
   position:fixed;top:-280px;left:50%;
   transform:translateX(-50%) rotate(8deg);
-  width:110px;z-index:620;pointer-events:none;
+  width:210px;z-index:620;pointer-events:none;
   filter:drop-shadow(0 0 18px rgba(100,200,100,.6));
   transition:top 2.2s cubic-bezier(.4,0,.15,1),
              transform 2.2s cubic-bezier(.4,0,.15,1);
