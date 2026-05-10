@@ -150,11 +150,21 @@ function toggleAudio(){
   }
 }
 function stopAllAudio(){
+  // stop background audio
   document.getElementById('birthday-audio').pause();
+
+  // stop flute
   if(window._flute){
     window._flute.pause();
     window._flute.currentTime=0;
     window._flute=null;
+  }
+
+  // stop spotify — remove src to kill the iframe audio completely
+  const iframe=document.getElementById('spotify-iframe');
+  if(iframe){
+    window._spotifySrc=window._spotifySrc||iframe.src;
+    iframe.src='';
   }
 }
 window.addEventListener('pagehide', stopAllAudio);
