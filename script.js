@@ -159,17 +159,6 @@ function stopAllAudio(){
     window._flute.currentTime=0;
     window._flute=null;
   }
-
- // fully unload spotify iframe
-  const iframe=document.getElementById('spotify-iframe');
-  if(iframe){
-    const parent=iframe.parentNode;
-    const blank=document.createElement('iframe');
-    blank.id='spotify-iframe';
-    blank.src='about:blank';
-    blank.style.display='none';
-    parent.replaceChild(blank,iframe);
-  }
 }
 
 // update progress bar and time as audio plays
@@ -409,56 +398,20 @@ wrap.addEventListener('click',()=>{
   },
 
 9(){
-  const audio=document.getElementById('birthday-audio');
-  audio.pause();
-  if(window._flute){
-    window._flute.pause();
-    window._flute.currentTime=0;
-    window._flute=null;
-  }
+    const audio=document.getElementById('birthday-audio');
+    audio.pause();
+    if(window._flute){
+      window._flute.pause();
+      window._flute.currentTime=0;
+      window._flute=null;
+    }
 
-  // destroy old iframe and build a fresh one every time panel opens
-  function mountSpotify(){
-    const old=document.getElementById('spotify-iframe');
-    const parent=old.parentNode;
+    document.getElementById('spotify-panel').classList.add('show');
 
-    // ↓ paste your full Spotify embed URL between the quotes
-    const SPOTIFY_URL='https://open.spotify.com/embed/playlist/XXXXX';
-
-    const fresh=document.createElement('iframe');
-    fresh.id='spotify-iframe';
-    fresh.src=SPOTIFY_URL;
-    fresh.width='100%';
-    fresh.height='352';
-    fresh.frameBorder='0';
-    fresh.allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
-    fresh.loading='lazy';
-    fresh.style.borderRadius='14px';
-    fresh.style.border='none';
-    fresh.style.display='block';
-    parent.replaceChild(fresh,old);
-  }
-
-  function killSpotify(){
-    const iframe=document.getElementById('spotify-iframe');
-    if(!iframe)return;
-    const parent=iframe.parentNode;
-    // replace with empty placeholder — fully unloads the player
-    const blank=document.createElement('iframe');
-    blank.id='spotify-iframe';
-    blank.src='about:blank';
-    blank.style.display='none';
-    parent.replaceChild(blank,iframe);
-  }
-
-  mountSpotify();
-  document.getElementById('spotify-panel').classList.add('show');
-
-  document.getElementById('spotify-close').addEventListener('click',()=>{
-    killSpotify();
-    document.getElementById('spotify-panel').classList.remove('show');
-    audio.play().catch(()=>{});
-  },{once:true});
+    document.getElementById('spotify-close').addEventListener('click',()=>{
+      document.getElementById('spotify-panel').classList.remove('show');
+      audio.play().catch(()=>{});
+    },{once:true});
   }
 };
 
