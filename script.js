@@ -335,7 +335,7 @@ const ACTIONS = {
       '~ ~ ~',
       'जो किसी से द्वेष नहीं रखता, जो सबसे मित्रतापूर्ण और दयालु है, अहंकार से मुक्त है, सुख-दुख में समभाव रखता है और क्षमाशील है — ऐसा व्यक्ति मुझे प्रिय है।',
       '~ ~ ~',
-      'Happy Birthday 🌸'
+      'Happy Birthday Simran🌸'
     ];
 
     const container = document.getElementById('krishna-lines');
