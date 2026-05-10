@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Happy Birthday 🎂</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div id="stars"></div>
+
+  <!-- LIGHTS -->
+  <div id="lights-wrap">
+    <svg id="lights-svg" width="100%" height="80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"></svg>
+  </div>
+
+  <!-- HERO -->
+  <div id="hero">
+    <h1>Happy Birthday!</h1>
+    <div class="crush-name">Simran🌻</div>
+    <p class="sub">Wishing you a day as magical as you are ✨</p>
+  </div>
+
+  <!-- CAKE -->
+  <div id="cake">
+    <svg viewBox="0 0 148 168" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="74" cy="157" rx="70" ry="11" fill="#e8c5a0" />
+      <rect x="11" y="105" width="114" height="51" rx="9" fill="#f7a8b8" />
+      <rect x="11" y="105" width="114" height="15" rx="7" fill="#ff85a1" />
+      <ellipse cx="27" cy="105" rx="9" ry="7" fill="#fff5f7" />
+      <ellipse cx="50" cy="103" rx="10" ry="8" fill="#fff5f7" />
+      <ellipse cx="74" cy="105" rx="9" ry="7" fill="#fff5f7" />
+      <ellipse cx="98" cy="103" rx="10" ry="8" fill="#fff5f7" />
+      <ellipse cx="121" cy="105" rx="9" ry="7" fill="#fff5f7" />
+      <rect x="27" y="59" width="94" height="49" rx="8" fill="#ffb3cc" />
+      <rect x="27" y="59" width="94" height="14" rx="6" fill="#ff85a1" />
+      <ellipse cx="43" cy="59" rx="8" ry="6" fill="#fff5f7" />
+      <ellipse cx="65" cy="57" rx="9" ry="7" fill="#fff5f7" />
+      <ellipse cx="87" cy="59" rx="8" ry="6" fill="#fff5f7" />
+      <ellipse cx="109" cy="57" rx="9" ry="7" fill="#fff5f7" />
+      <circle cx="41" cy="92" r="4.5" fill="#ff4d80" />
+      <circle cx="57" cy="96" r="3.5" fill="#ffcc00" />
+      <circle cx="74" cy="92" r="4.5" fill="#44ddff" />
+      <circle cx="91" cy="96" r="3.5" fill="#ffcc00" />
+      <circle cx="107" cy="92" r="4.5" fill="#ff4d80" />
+      <rect x="49" y="35" width="9" height="26" rx="4" fill="#a0e0ff" />
+      <rect x="69" y="28" width="9" height="33" rx="4" fill="#ffdd77" />
+      <rect x="89" y="35" width="9" height="26" rx="4" fill="#c8a0ff" />
+      <g class="flame" id="fl1" style="transform-origin:53px 32px">
+        <ellipse cx="53" cy="32" rx="4.5" ry="7" fill="#ff8c00" />
+        <ellipse cx="53" cy="30" rx="2.8" ry="4.5" fill="#fff176" />
+      </g>
+      <g class="flame" id="fl2" style="transform-origin:73px 25px">
+        <ellipse cx="73" cy="25" rx="4.5" ry="7" fill="#ff5722" />
+        <ellipse cx="73" cy="23" rx="2.8" ry="4.5" fill="#fff9c4" />
+      </g>
+      <g class="flame" id="fl3" style="transform-origin:93px 32px">
+        <ellipse cx="93" cy="32" rx="4.5" ry="7" fill="#ff8c00" />
+        <ellipse cx="93" cy="30" rx="2.8" ry="4.5" fill="#fff176" />
+      </g>
+    </svg>
+  </div>
+
+  <!-- MUSIC PLAYER -->
+  <div id="player">
+    <div class="pt">🎵 Now Playing</div>
+    <div class="ps">Your special song 🎶</div>
+    <!-- ↓ paste your audio file path in src="" -->
+    <audio id="birthday-audio" src="Indila.mp3"></audio>
+    <div id="audio-controls">
+      <button id="play-pause-btn" onclick="toggleAudio()">⏸</button>
+      <div id="progress-bar">
+        <div id="progress-fill"></div>
+        <div id="progress-thumb"></div>
+      </div>
+      <div id="time-display">0:00</div>
+    </div>
+    <div class="peq" id="eq"></div>
+  </div>
+  <!-- DJ SPEAKERS -->
+  <svg id="speaker-left" viewBox="0 0 72 130" xmlns="http://www.w3.org/2000/svg">
+    <!-- cabinet -->
+    <rect x="4" y="4" width="64" height="122" rx="8" fill="#1a1a2e" />
+    <rect x="4" y="4" width="64" height="122" rx="8" fill="none" stroke="#333366" stroke-width="2" />
+    <!-- brand strip -->
+    <rect x="10" y="10" width="52" height="8" rx="3" fill="#6644ff" opacity=".8" />
+    <!-- tweeter (small top speaker) -->
+    <circle cx="36" cy="34" r="10" fill="#111" />
+    <circle cx="36" cy="34" r="7" fill="#222" />
+    <circle cx="36" cy="34" r="4" fill="#6644ff" opacity=".6" />
+    <circle cx="36" cy="34" r="1.5" fill="#fff" opacity=".5" />
+    <!-- woofer (big bottom speaker) -->
+    <circle cx="36" cy="82" r="24" fill="#111" />
+    <circle cx="36" cy="82" r="20" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+    <circle class="woofer" cx="36" cy="82" r="13" fill="#222" stroke="#6644ff" stroke-width="1.5" />
+    <circle cx="36" cy="82" r="5" fill="#6644ff" opacity=".7" />
+    <circle cx="36" cy="82" r="2" fill="#fff" opacity=".4" />
+    <!-- bass port -->
+    <rect x="14" y="112" width="44" height="7" rx="3.5" fill="#111" stroke="#333" stroke-width="1" />
+    <!-- led dots -->
+    <circle cx="16" cy="14" r="2" fill="#00ffaa" opacity=".9" />
+    <circle cx="24" cy="14" r="2" fill="#ff4466" opacity=".9" />
+    <circle cx="32" cy="14" r="2" fill="#ffcc00" opacity=".9" />
+  </svg>
+
+  <svg id="speaker-right" viewBox="0 0 72 130" xmlns="http://www.w3.org/2000/svg">
+    <rect x="4" y="4" width="64" height="122" rx="8" fill="#1a1a2e" />
+    <rect x="4" y="4" width="64" height="122" rx="8" fill="none" stroke="#333366" stroke-width="2" />
+    <rect x="10" y="10" width="52" height="8" rx="3" fill="#6644ff" opacity=".8" />
+    <circle cx="36" cy="34" r="10" fill="#111" />
+    <circle cx="36" cy="34" r="7" fill="#222" />
+    <circle cx="36" cy="34" r="4" fill="#6644ff" opacity=".6" />
+    <circle cx="36" cy="34" r="1.5" fill="#fff" opacity=".5" />
+    <circle cx="36" cy="82" r="24" fill="#111" />
+    <circle cx="36" cy="82" r="20" fill="#1a1a1a" stroke="#333" stroke-width="1" />
+    <circle class="woofer" cx="36" cy="82" r="13" fill="#222" stroke="#6644ff" stroke-width="1.5" />
+    <circle cx="36" cy="82" r="5" fill="#6644ff" opacity=".7" />
+    <circle cx="36" cy="82" r="2" fill="#fff" opacity=".4" />
+    <rect x="14" y="112" width="44" height="7" rx="3.5" fill="#111" stroke="#333" stroke-width="1" />
+    <circle cx="16" cy="14" r="2" fill="#00ffaa" opacity=".9" />
+    <circle cx="24" cy="14" r="2" fill="#ff4466" opacity=".9" />
+    <circle cx="32" cy="14" r="2" fill="#ffcc00" opacity=".9" />
+  </svg>
+  <!-- CAT -->
+  <div id="cat">
+    <svg viewBox="0 0 180 200" xmlns="http://www.w3.org/2000/svg" overflow="visible" width="100%" height="100%">
+      <g id="ctl">
+        <path d="M28 158 Q-22 128 -12 88 Q-2 58 18 78" fill="none" stroke="#e08040" stroke-width="12"
+          stroke-linecap="round" />
+      </g>
+      <g id="cleg">
+        <rect x="48" y="146" width="16" height="34" rx="8" fill="#e08040" />
+        <rect x="78" y="146" width="16" height="34" rx="8" fill="#d07030" />
+        <rect x="108" y="146" width="16" height="34" rx="8" fill="#e08040" />
+        <ellipse cx="56" cy="181" rx="11" ry="7" fill="#f0a060" />
+        <ellipse cx="86" cy="181" rx="11" ry="7" fill="#f0a060" />
+        <ellipse cx="116" cy="181" rx="11" ry="7" fill="#f0a060" />
+      </g>
+      <ellipse cx="88" cy="128" rx="62" ry="44" fill="#e88030" />
+      <ellipse cx="88" cy="137" rx="36" ry="26" fill="#f5c080" />
+      <circle cx="88" cy="73" r="50" fill="#e88030" />
+      <ellipse cx="58" cy="86" rx="15" ry="11" fill="#f5c080" />
+      <ellipse cx="118" cy="86" rx="15" ry="11" fill="#f5c080" />
+      <ellipse cx="70" cy="66" rx="11" ry="13" fill="#2a2a2a" />
+      <ellipse cx="106" cy="66" rx="11" ry="13" fill="#2a2a2a" />
+      <circle cx="74" cy="63" r="3.5" fill="white" />
+      <circle cx="110" cy="63" r="3.5" fill="white" />
+      <ellipse cx="88" cy="82" rx="5.5" ry="4.5" fill="#ff9999" />
+      <path d="M83 87 Q88 93 93 87" fill="none" stroke="#d06060" stroke-width="2" stroke-linecap="round" />
+      <polygon points="46,33 36,3 70,26" fill="#e88030" />
+      <polygon points="52,31 44,10 66,28" fill="#ff9999" />
+      <polygon points="130,33 140,3 106,26" fill="#e88030" />
+      <polygon points="124,31 132,10 110,28" fill="#ff9999" />
+      <line x1="28" y1="80" x2="67" y2="84" stroke="#7a5520" stroke-width="1.5" />
+      <line x1="28" y1="86" x2="67" y2="86" stroke="#7a5520" stroke-width="1.5" />
+      <line x1="28" y1="92" x2="67" y2="88" stroke="#7a5520" stroke-width="1.5" />
+      <line x1="148" y1="80" x2="109" y2="84" stroke="#7a5520" stroke-width="1.5" />
+      <line x1="148" y1="86" x2="109" y2="86" stroke="#7a5520" stroke-width="1.5" />
+      <line x1="148" y1="92" x2="109" y2="88" stroke="#7a5520" stroke-width="1.5" />
+      <g transform="rotate(-28,142,128)">
+        <rect x="140" y="116" width="15" height="38" rx="7.5" fill="#e88030" />
+      </g>
+      <rect x="150" y="80" width="38" height="32" rx="5" fill="#ff6688" />
+      <rect x="150" y="80" width="38" height="9" rx="4" fill="#ff3366" />
+      <line x1="169" y1="80" x2="169" y2="112" stroke="#fff" stroke-width="2.5" />
+      <path d="M160 80 Q169 72 178 80" fill="none" stroke="#ffdd00" stroke-width="2.5" stroke-linecap="round" />
+    </svg>
+  </div>
+
+  <!-- ── MAKE A WISH — CINEMATIC ELEMENTS ── -->
+
+  <!-- dark dim -->
+  <div id="wish-dim"></div>
+
+  <!-- shooting star -->
+  <div id="sstar"></div>
+
+  <!-- letter overlay — tap anywhere to close -->
+  <div id="letter-overlay">
+    <div id="envelope">
+
+      <!-- envelope SVG visual -->
+      <svg id="env-svg" viewBox="0 0 300 195" xmlns="http://www.w3.org/2000/svg">
+        <!-- envelope body -->
+        <rect x="1" y="48" width="298" height="146" rx="8" fill="#fff0e8" stroke="#f0c0a8" stroke-width="2" />
+        <!-- bottom V fold -->
+        <polygon points="1,193 150,112 299,193" fill="#ffe0cc" stroke="#f0c0a8" stroke-width="1" />
+        <!-- left fold -->
+        <polygon points="1,50 1,193 116,122" fill="#fcd8c8" stroke="#f0c0a8" stroke-width="1" />
+        <!-- right fold -->
+        <polygon points="299,50 299,193 184,122" fill="#fcd8c8" stroke="#f0c0a8" stroke-width="1" />
+        <!-- flap group — animates "open" -->
+        <g id="env-flap-grp">
+          <polygon points="1,50 299,50 150,145" fill="#ffb0c8" stroke="#f090a8" stroke-width="1.5" />
+          <!-- wax seal heart -->
+          <text x="150" y="118" text-anchor="middle" font-size="28" fill="#d03060">💌</text>
+        </g>
+      </svg>
+
+      <!-- letter paper that rises from inside -->
+      <div id="letter-paper">
+        <div class="greeting">Dear Simran,</div>
+
+        <!--
+        ✍️  WRITE YOUR MESSAGE BELOW — replace the placeholder lines:
+      -->
+        <p class="msg">
+          I don't know the perfect words,<br>
+          but I know this — every time I see<br>
+          you smile, the whole world feels<br>
+          a little warmer. 🌸<br><br>
+          Happy Birthday. I hope today<br>
+          feels as special as you are to me.
+        </p>
+
+        <!--  ✍️  CHANGE THE SIGN-OFF below:  -->
+        <div class="sign">— Someone who cares 💖</div>
+
+        <div class="tap-hint">tap anywhere to close &nbsp;✨</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SPOTIFY PANEL -->
+  <div id="spotify-panel">
+    <h3>🎵 A playlist just for you</h3>
+    <!--  ✍️  YOUR MESSAGE:  -->
+    <div id="spotify-msg">
+      Write your cute message here for Simran 💌<br>
+      Every song in here reminds me of you 🌸
+    </div>
+    <!--
+    🎵 Paste your Spotify embed src below.
+    Spotify → playlist → ··· → Share → Embed → copy src URL
+  -->
+    <iframe id="spotify-iframe"
+      src="https://open.spotify.com/embed/playlist/3a9QAyJd9uPpSJ7LN3vWzs?utm_source=generator" width="100%"
+      height="352" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"></iframe>
+    <button id="spotify-close" onclick="document.getElementById('spotify-panel').classList.remove('show')">
+      Close ✕
+    </button>
+  </div>
+
+  <!-- KRISHNA SEQUENCE -->
+<div id="krishna-curtain"></div>
+<img id="krishna-feather" src="feather.png" alt="peacock feather"/>
+<div id="krishna-text-wrap">
+  <div id="krishna-lines"></div>
+</div>
+
+  <!-- BUTTONS — one at a time -->
+  <div id="btn-slot">
+    <button class="sbtn b1 show" id="b1" onclick="step(1)">💡 Turn on the lights</button>
+    <button class="sbtn b2" id="b2" onclick="step(2)">🎀 Start decorating</button>
+    <button class="sbtn b3" id="b3" onclick="step(3)">🎵 Start the music</button>
+    <button class="sbtn b4" id="b4" onclick="step(4)">🎂 Bring the cake</button>
+    <button class="sbtn b5" id="b5" onclick="step(5)">🕯️ Light the candles</button>
+    <button class="sbtn b6" id="b6" onclick="step(6)">🎊 Pop the poppers</button>
+    <button class="sbtn b7" id="b7" onclick="step(7)">🥂 Make a wish</button>
+<button class="sbtn b-krishna" id="b8" onclick="step(8)">🪶 A message from the universe</button>    <button class="sbtn b9" id="b9" onclick="step(9)">🎧 A playlist I made for you</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
