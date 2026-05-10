@@ -476,7 +476,7 @@ function spawnSideBalloons(count) {
         <polygon points="30,58 26,64 34,64" fill="${dk}"/>
         <path d="M30 64 Q28 71 32 77" fill="none" stroke="${dk}" stroke-width="1.5"/>
       </svg>`;
-      document.body.appendChild(b);
+      document.getElementById('balloon-container').appendChild(b);
       requestAnimationFrame(() => b.classList.add("up"));
     }, i * 130);
   }
