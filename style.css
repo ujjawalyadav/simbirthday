@@ -863,7 +863,7 @@ body.party {
 /* envelope + letter wrapper */
 #envelope{
   position:relative;
-  width:82vw;max-width:310px;
+  width:90vw;max-width:310px;
   transform:scale(0) rotate(-10deg);
   transition:transform .7s cubic-bezier(.34,1.56,.64,1);
   margin-top:auto;
@@ -900,6 +900,7 @@ body.party {
   left: 8%;
   right: 8%;
   bottom: 14%;
+width: 90vw;
   background: linear-gradient(172deg, #fffdf9 0%, #fff8f0 100%);
   border-radius: 7px 7px 4px 4px;
   border: 1.5px solid #f0d8c4;
