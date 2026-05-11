@@ -920,7 +920,8 @@ width: 90vw;
 }
 
 #envelope.open #letter-paper {
-  max-height: 520px;
+  max-height: 400px;
+width: 90vw;
   opacity: 1;
   transform: translateY(-62%);
   pointer-events: all;
